@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 파비콘
+  RewriteCond %{REQUEST_URI} !^img/favicon.ico$
+  RewriteRule ^favicon.ico$ img/favicon.ico [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
