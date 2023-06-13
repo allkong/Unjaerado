@@ -8,8 +8,8 @@ function handleRoute($url) {
         case 'product':
             include 'pages/product.php'; 
             break;
-        case '':
-            include 'pages/product.php'; 
+        case 'trash':
+            include 'pages/trash.php'; 
             break;
         case 'community':
             include 'pages/community.php'; 
