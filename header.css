@@ -4,13 +4,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'KCC-Ganpan';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   background-color: #fbfbfb;
   font-size: 16px;
@@ -34,29 +27,30 @@ body {
 }
 
 header {
+  position: fixed;
   background-color: #fbfbfb;
   justify-content: space-between;
   opacity: .8;
   overflow-y: hidden;
-  padding: 0.5rem 5rem 0.5rem 5rem;
+  padding: 0rem 2rem 0rem 2rem;
   width: 100%;
   height: 82px;
   z-index: 1000;
 }
 
 .head-wrap {
-  max-width: 1200px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .head-table {
+  width: 100%;
   display: table;
 }
 
 .head-title {
-  width: 566px;
+  width: 16.66666667%;
   display: table-cell;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -74,21 +68,18 @@ header {
   padding: 0 8px;
 }
 
-.logo-txt {
-  background-color: initial;
-  font-weight: 400;
-  font-size: 1.875rem;
-  margin: 0;
-  font-family: 'KCC-Ganpan';
-  color: #0c800c;
+.nav-center {
+  width: 66.66666667%;
+  font-size: .9625rem;
+  display: table-cell;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 82px;
+  text-align: center;
 }
 
-.logo-txt:hover {
-  color: #0c800c;
-}
-
-.navbar {
-  width: 594px;
+.nav-right {
+  width: 16.66666667%;
   font-size: .9625rem;
   display: table-cell;
   padding-top: 20px;
@@ -98,10 +89,6 @@ header {
 }
 
 .nav-button {
-  display: inline-block;
-}
-
-.nav-button-left {
   background-color: initial;
   border: none;
   border-bottom: 3px solid transparent;
@@ -109,24 +96,12 @@ header {
   font-family: 'Pretendard';
   font-weight: 400;
   font-size: 1.25rem;
-  /* margin-left: 1.25rem; */
+  margin-right: 1.25rem;
   padding: 0.5rem;
   transition: .3s ease;
 }
 
-.nav-button-right {
-  background-color: initial;
-  border: none;
-  border-bottom: 3px solid transparent;
-  color: #19A654;
-  font-family: 'Pretendard';
-  font-weight: 400;
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  transition: .3s ease;
-}
-
-.nav-button-left:hover, .nav-button-right:hover {
+.nav-button:hover {
   border-bottom: 3px solid #19A654;
   color: #19A654;
 }

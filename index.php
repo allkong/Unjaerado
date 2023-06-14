@@ -2,8 +2,17 @@
 
 function handleRoute($url) {
     switch ($url) {
-        default:
+        case 'home':
             include 'pages/home.php';
+            break;
+        case 'member':
+            include 'pages/member/member.php';
+            break;
+        case 'register':
+            include 'pages/member/register.php';
+            break;
+        case 'logout':
+            include 'pages/member/logout.php';
             break;
         case 'product':
             include 'pages/product.php'; 
@@ -17,11 +26,14 @@ function handleRoute($url) {
         case 'calendar':
             include 'pages/calendar.php';
             break;
+        case 'test':
+            include 'pages/member/login_test.php';
+            break;
     }
 }
 
 // URL 파라미터에서 요청된 경로 가져오기
 $url = isset($_GET['url']) ? $_GET['url'] : '';
 
-// 라우팅 처리할 함수를 호출합
+// 라우팅 처리할 함수 호출
 handleRoute($url);
