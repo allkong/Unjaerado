@@ -14,8 +14,8 @@ function handleRoute($url) {
         case 'community':
             include 'pages/community.php'; 
             break;
-        case 'challenge':
-            include 'pages/challenge.php';
+        case 'calendar':
+            include 'pages/calendar.php';
             break;
     }
 }
