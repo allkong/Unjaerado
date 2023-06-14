@@ -111,6 +111,52 @@ body::-webkit-scrollbar-track {
     font-weight: 300;
 }
 
+/* product */
+.header-area {
+    padding: 82px 0 0 0;
+}
+
+.sub-bg {
+    background-color: #2db666;
+    height: 120px;
+}
+
+.sub-title {
+    font-family: GyeonggiBatang;
+    color: #ffffff;
+    font-size: 45px;
+    text-align: center;
+    padding: 36px 0 0 0;
+}
+
+.product-card {
+    display: flex;
+    padding: 35px 0 35px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.product-img {
+    height: 240px;
+    border-radius: 15px
+}
+
+.product-card-text {
+    margin: 16px 0 0 0;
+}
+
+.product-name {
+    font-size: 35px;
+    font-weight: 600;
+    margin: 27px 0px 29px 55px;
+}
+
+.product-info {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 0 6px 53px;
+}
+
+
 /* trash */
 
 .msg-card {
