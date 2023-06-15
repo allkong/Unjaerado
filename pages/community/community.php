@@ -35,19 +35,15 @@
             text-decoration: underline;
         }
 
-        a:link {
-            color: #57A0EE;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 
 <body>
-    
+    <?php include 'header.php'; ?>
+    <div class="header-area"></div>
+    <div class="sub-bg">
+        <p class="sub-title">제로웨이스트 제품소개</p>
+    </div>
     <?php
     $connect = mysqli_connect('127.0.0.1', 'root', 'password', 'unjaerado') or die("connect failed");
     $query = "select * from board order by number desc";    //역순 출력

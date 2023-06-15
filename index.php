@@ -38,9 +38,6 @@ function handleRoute($url) {
         case 'calendar':
             include 'pages/calendar.php';
             break;
-        case 'test':
-            include 'pages/member/login_test.php';
-            break;
     }
 }
 

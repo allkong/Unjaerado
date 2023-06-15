@@ -42,14 +42,16 @@
     </div>
     <?php
     @session_start();
-    $URL = "login";
     if (!isset($_SESSION['userid'])) {
     ?>
 
         <script>
             alert("로그인이 필요합니다.");
-            location.replace("<?php echo $URL ?>");
+
+            <?php header("Location: http://localhost/zero-waste/member");
+            exit(); ?>
         </script>
+        
     <?php
     }
     ?>

@@ -351,3 +351,12 @@ body::-webkit-scrollbar-track {
     border-bottom: 3px solid #858585;
     color: #858585;
   }
+
+  /* calendar */
+
+  .cal-wrap {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 111px 0px 0px 572px;
+  }
