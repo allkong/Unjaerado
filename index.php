@@ -21,7 +21,19 @@ function handleRoute($url) {
             include 'pages/trash.php'; 
             break;
         case 'community':
-            include 'pages/community.php'; 
+            include 'pages/community/community.php'; 
+            break;
+        case 'write':
+            include 'pages/community/write.php'; 
+            break;
+        case 'read':
+            include 'pages/community/read.php'; 
+            break;
+        case 'modify':
+            include 'pages/community/modify.php'; 
+            break;
+        case 'delete':
+            include 'pages/community/delete.php'; 
             break;
         case 'calendar':
             include 'pages/calendar.php';

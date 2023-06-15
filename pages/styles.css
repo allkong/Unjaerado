@@ -332,3 +332,22 @@ body::-webkit-scrollbar-track {
     outline: none;
   }
   
+/* community */
+
+.com-button {
+    background-color: initial;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #858585;
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-right: 1.25rem;
+    padding: 0.5rem;
+    transition: .3s ease;
+  }
+  
+  .com-button:hover {
+    border-bottom: 3px solid #858585;
+    color: #858585;
+  }
