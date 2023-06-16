@@ -29,7 +29,7 @@
   </div>
   <div class="main-container-2">
     <img src="img/island.png" alt="logo" width="40"></img>
-    <p class="home-title-1">제로웨이스트 5R 운동</p>
+    <p class="home-title-1">제로 웨이스트 5R 운동</p>
     <div class="home-card-container">
       <div class="home-card">
         <img src="img/refuse.png" class="home-img-2" alt=""></img>

@@ -12,7 +12,13 @@
           <button class="nav-button"><a href="product">제품소개</a></button>
           <button class="nav-button"><a href="trash">쓰레기검색</a></button>
           <button class="nav-button"><a href="community">게시판</a></button>
-          <button class="nav-button"><a href="calendar">챌린지</a></button>
+          <?php
+          if (isset($_SESSION['userid'])) {
+            echo '<button class="nav-button"><a href="calendar">챌린지</a></button>';
+          } else {
+            echo '<button class="nav-button" onclick="alert(\'로그인이 필요합니다.\')"><a href="member">챌린지</a></button>';
+          }
+          ?>
         </div>
         <div class="nav-right">
           <?php
