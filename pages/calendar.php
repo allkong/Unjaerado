@@ -108,22 +108,34 @@
     <div class="sub-bg">
         <p class="sub-title">제로웨이스트 챌린지</p>
     </div>
+    
     <div class="cal-wrap">
     <div>
     <?php
     $uploadDirectory = "uploads/";
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["date"])) {
+        $id = $_SESSION['userid'];
         $date = date("Y-m-d", strtotime($_POST["date"]));
         $uploadedFile = $_FILES["image"]["tmp_name"];
-        $imagePath = $uploadDirectory . $date . ".jpg";
+        $imagePath = $uploadDirectory . basename($_FILES["image"]["name"]);
 
         if (move_uploaded_file($uploadedFile, $imagePath)) {
-            // 이미지 업로드 성공
-            echo $imagePath;
+            $connect = mysqli_connect('127.0.0.1', 'root', 'password', 'unjaerado') or die("connect failed");
+            if ($connect->connect_error) {
+                die("Connection failed: " . $connect->connect_error);
+            }
+
+            $sql = "INSERT INTO calendar (img_id, id, date, image_path) VALUES (null, '$id', '$date', '$imagePath')";
+            if ($connect->query($sql) === TRUE) {
+                echo "Image uploaded successfully.";
+            } else {
+                echo "Error: " . $sql . "<br>" . $connect->error;
+            }
+
+            $connect->close();
         } else {
-            // 이미지 업로드 실패
-            echo "Error uploading image.";
+            echo "Failed to upload image.";
         }
     }
 
@@ -149,6 +161,26 @@
         $next_year = $year + 1;
     }
 
+    $connect = mysqli_connect('127.0.0.1', 'root', 'password', 'unjaerado') or die("connect failed");
+    if ($connect->connect_error) {
+        die("Connection failed: " . $connect->connect_error);
+    }
+
+    // DB에서 이미지 가져오기
+    $id = $_SESSION['userid'];
+    $sql = "SELECT * FROM calendar WHERE id = '$id'";
+    $result = $connect->query($sql);
+
+    // 이미지 배열 생성
+    $images = array();
+    while ($row = $result->fetch_assoc()) {
+        $date = $row['date'];
+        $imagePath = $row['image_path'];
+        $images[$date] = $imagePath;
+    }
+
+    $connect->close(); // 연결 닫기
+
     // 달력 출력
     echo "<h2>{$year}년 {$month}월</h2>";
     echo "<table>";
@@ -173,9 +205,8 @@
             echo "<td></td>";
         } else {
             $currentDate = sprintf("%04d-%02d-%02d", $year, $month, $day_count);
-            $imagePath = $uploadDirectory . $currentDate . ".jpg";
-            if (file_exists($imagePath)) {
-                echo "<td class='calendar-cell'><img src='{$imagePath}' alt='Calendar Image' class='calendar-image'></td>";
+            if (array_key_exists($currentDate, $images)) {
+                echo "<td class='calendar-cell'><img src='{$images[$currentDate]}' alt='Calendar Image' class='calendar-image'></td>";
             } else {
                 echo "<td data-date='{$currentDate}' onclick='selectDate(this)'>{$day_count}</td>";
             }
@@ -192,9 +223,8 @@
                 echo "<td></td>";
             } else {
                 $currentDate = sprintf("%04d-%02d-%02d", $year, $month, $day_count);
-                $imagePath = $uploadDirectory . $currentDate . ".jpg";
-                if (file_exists($imagePath)) {
-                    echo "<td class='calendar-cell'><img src='{$imagePath}' alt='Calendar Image' class='calendar-image'></td>";
+                if (array_key_exists($currentDate, $images)) {
+                    echo "<td class='calendar-cell'><img src='{$images[$currentDate]}' alt='Calendar Image' class='calendar-image'></td>";
                 } else {
                     echo "<td data-date='{$currentDate}' onclick='selectDate(this)'>{$day_count}</td>";
                 }
@@ -203,6 +233,7 @@
         }
         echo "</tr>";
     }
+
     echo "</table>";
     ?>
     </div>
