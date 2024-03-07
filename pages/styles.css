@@ -1,0 +1,362 @@
+@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 0%; /* 스크롤바의 길이 */
+    background: #9cddc7; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(33, 244, 209, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
+
+/* home */
+#main-img {
+    margin: 0px;
+    display: block;
+    padding: 100px 0px 0px;
+    background: url("../img/nature.png") 50% 50% / cover no-repeat fixed transparent;
+    height: 63rem;
+    border: none;
+    border-radius: 0px;
+}
+
+.main-title {
+    font-family: 'GyeonggiBatang';
+    font-weight: 400;
+    font-size: 4rem;
+    margin: 230px 0px 0px 260px;
+    color: #000000;
+    position: relative;
+    animation: fadeInLeft 2.5s;
+}
+
+.title-line {
+    margin: 0 0 23px 0;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+.main-container-1 {
+    text-align: center;
+    margin: 40px 40px 40px 40px;
+    padding: 55px 0 80px 0px;
+    background-color: #f1f1f1;
+}
+
+.main-container-2 {
+    text-align: center;
+    margin: 90px 40px 90px 40px;
+    padding: 55px 0 140px 0px;
+}
+
+.home-title-1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 30px 0 33px 0px
+}
+
+.home-content-1 {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 38px 0;
+}
+
+.home-img-1 {
+    height: 370px;
+    margin: 15px;
+}
+
+.home-img-2 {
+    height: 150px;
+}
+
+.home-card-container {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0 80px 0px;
+}
+
+.home-card {
+    margin: 40px 50px 40px 50px;
+}
+
+.home-card-title {
+    font-size: 26px;
+    font-weight: 600;
+    padding: 28px 0 16px 0;
+}
+
+.home-card-content {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+/* product */
+.header-area {
+    padding: 82px 0 0 0;
+}
+
+.sub-bg {
+    background-color: #2db666;
+    height: 120px;
+}
+
+.sub-title {
+    font-family: GyeonggiBatang;
+    color: #ffffff;
+    font-size: 45px;
+    text-align: center;
+    padding: 36px 0 0 0;
+}
+
+.product-card {
+    display: flex;
+    padding: 35px 0 35px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.product-img {
+    height: 240px;
+    border-radius: 15px
+}
+
+.product-card-text {
+    margin: 16px 0 0 0;
+}
+
+.product-name {
+    font-size: 35px;
+    font-weight: 600;
+    margin: 27px 0px 29px 55px;
+}
+
+.product-info {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 0 6px 53px;
+}
+
+
+/* trash */
+
+.search {
+    position: relative;
+    width: 300px;
+    margin: 0 0 0 340px;
+}
+  
+.search-input {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+  
+#search-img {
+    background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png) 50% 50% / cover no-repeat fixed green;;
+    /* background-repeat: no-repeat; */
+    border: 0;
+    position : absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+}
+
+.msg-card {
+    font-size: 20px
+}
+
+.minutes-wrap {
+    margin-top: 3.5rem;
+  }
+  
+  .detail-container {
+    flex-grow: 1;
+    display: flex; /* 추가: 가로 크기 조절을 위해 flex 설정 */
+    flex-direction: column; /* 추가: 세로 크기 조절을 위해 column 설정 */
+    padding: 12px 22px 0 22px;
+  }
+  
+  .detail {
+    flex-grow: 1; /* 추가: 가로 크기 조절을 위해 flex-grow 설정 */
+    width: 100%;
+    height: 100%;
+    min-height: 0; /* 추가: 세로 크기 조절을 위해 min-height 설정 */
+    padding: 10px;
+    border: 1px solid #880e4f;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+  
+  *, ::after, ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e2e8f0;
+  }
+  
+  .responsive-wrapper .minutes-detail {
+    box-shadow: 0 0 0 1px rgba(0,0,0,.05);
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    min-height: 400px;
+  }
+  
+  .responsive-wrapper .minutes-detail .detail-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom-width: 1px;
+    --border-opacity: 1;
+    border-color: #edf2f7;
+    border-color: rgba(237,242,247,var(--border-opacity));
+    --bg-opacity: 1;
+    background-color: #fff;
+    background-color: rgba(255,255,255,var(--bg-opacity));
+  }
+  
+  .responsive-wrapper .minutes-detail .detail-header .circle-btn {
+    align-items: center;
+    display: flex;
+  }
+  
+  .responsive-wrapper .minutes-detail .detail-header .circle-btn .red-c {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    --bg-opacity: 1;
+    background-color: #f56565;
+    background-color: rgba(245,101,101,var(--bg-opacity));
+  }
+  
+  .responsive-wrapper .minutes-detail .detail-header .circle-btn .yellow-c {
+    --space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--space-x-reverse)));
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    --bg-opacity: 1;
+    background-color: #f6e05e;
+    background-color: rgba(246,224,94,var(--bg-opacity));
+  }
+  
+  .responsive-wrapper .minutes-detail .detail-header .circle-btn .green-c {
+    --space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--space-x-reverse)));
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    --bg-opacity: 1;
+    background-color: #48bb78;
+    background-color: rgba(72,187,120,var(--bg-opacity));
+  }
+  
+  .minutes-detail .detail-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    border-bottom-width: 1px;
+    --border-opacity: 1;
+    border-color: #edf2f7;
+    border-color: rgba(237,242,247,var(--border-opacity));
+    --bg-opacity: 1;
+    background-color: #fff;
+    background-color: rgba(255,255,255,var(--bg-opacity));
+  }
+  
+  .detail-title {
+    margin: 10px 1.5rem 10px 1.5rem;
+    border-bottom: 1px solid rgb(197, 197, 197);
+  }
+  
+  .detail-title-txt {
+    font-family: 'Pretendard' !important;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .detail-container .detail-content .detail-text {
+    padding: 1.5rem;
+    /* min-height: 100vh; */
+    width: 100%;
+    height: 600px;
+    font-size: 20px;
+    display: block;
+    overflow-x: auto;
+    color: #333;
+    background: #f8f8f8;
+    font-family: 'Pretendard';
+    margin: 0;
+  }
+  
+  .detail-container .detail-content:focus {
+    outline: none;
+  }
+  
+/* community */
+
+.com-button {
+    background-color: initial;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #858585;
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-right: 1.25rem;
+    padding: 0.5rem;
+    transition: .3s ease;
+  }
+  
+  .com-button:hover {
+    border-bottom: 3px solid #858585;
+    color: #858585;
+  }
+
+  /* calendar */
+
+  .cal-wrap {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 111px 0px 0px 572px;
+  }
